@@ -1,0 +1,17 @@
+name:                alonzo
+version:             0.1.0.0
+synopsis:            Toy lambda calculus interpreter         
+license:             GPL-3
+license-file:        LICENSE
+author:              asakeron
+maintainer:          asakeron@gmail.com
+category:            Development
+build-type:          Simple
+extra-source-files:  README.md, LICENSE
+cabal-version:       >=1.10
+executable alonzo
+  main-is:             Main.hs
+  ghc-options:         -W -Wall -Werror
+  build-depends:       base >=4.7 && <4.8
+  hs-source-dirs:      alonzo
+  default-language:    Haskell2010
