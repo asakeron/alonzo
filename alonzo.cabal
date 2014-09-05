@@ -11,15 +11,16 @@ extra-source-files:  README.md, LICENSE
 cabal-version:       >=1.10
 executable alonzo-repl
   main-is:             Main.hs
-  ghc-options:         -W -Wall
+  ghc-options:         -W -Wall -Werror
   build-depends:       base                        >=4.7  && <4.8,
                        alonzo
   hs-source-dirs:      src
   default-language:    Haskell2010
 library
   exposed-modules:     Alonzo.Syntax,
-                       Alonzo.Parser
-  ghc-options:         -W -Wall
+                       Alonzo.Parser,
+                       Alonzo.Interpreter
+  ghc-options:         -W -Wall -Werror
   build-depends:       base                        >=4.7 && <4.8,
                        attoparsec                  >=0.12 && <0.13,
                        text                        >=1.1  && <1.2
