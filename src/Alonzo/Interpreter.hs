@@ -1,19 +1,20 @@
 module Alonzo.Interpreter (
   eval) where
 
-import qualified Alonzo.Syntax as Syntax
-import qualified Data.Map      as Map
+import qualified Alonzo.Syntax as S
+import qualified Data.Map      as M
 
-eval :: Syntax.Expression -> Either String Syntax.Expression
-eval e = evalWithEnv e Map.empty
+eval :: S.Expression -> Either String S.Expression
+eval e = evalWithEnv e M.empty
 
-evalWithEnv :: Syntax.Expression -> Map.Map String Syntax.Expression -> Either String Syntax.Expression
-evalWithEnv a@(Syntax.Abstraction _ _) _   = return a
-evalWithEnv n@(Syntax.Name identifier) env = return $ Map.findWithDefault n identifier env
-evalWithEnv (Syntax.Application f arg) env = do
+evalWithEnv :: S.Expression -> M.Map String S.Expression -> Either String S.Expression
+evalWithEnv a@(S.Abstraction _ _) _   = return a
+evalWithEnv n@(S.Name identifier) env = return $ M.findWithDefault n identifier env
+evalWithEnv (S.Application f arg) env = do
   abstraction <- evalWithEnv f env
   case abstraction of
-   (Syntax.Abstraction name body) -> evalWithEnv body $ Map.insert name arg env
-   _                              -> Left $ "Error: trying to apply " ++ show f ++
-                                     ", which is not an abstraction, to argument "
-                                     ++ show arg ++ "."
+   (S.Abstraction name body) -> evalWithEnv body $ M.insert name arg env
+   _                         -> Left $ "Error: trying to apply " ++ show f ++
+                                       ", which is not an abstraction, to argument "
+                                       ++ show arg ++ "."
+                                       
