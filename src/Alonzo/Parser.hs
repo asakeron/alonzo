@@ -23,7 +23,7 @@ name = do
 
 abstraction :: Parser Syntax.Expression
 abstraction = do
-  _ <- choice [char '\\', char 'λ'] 
+  _ <- choice [char '\\', char 'λ']
   n <- identifier
   _ <- char '.'
   e <- expression
