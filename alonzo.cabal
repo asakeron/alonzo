@@ -29,7 +29,7 @@ executable alonzo-repl
                      , haskeline
                      , text
                      , alonzo
-  hs-source-dirs:      src/REPL
+  hs-source-dirs:      repl
   default-language:    Haskell2010
 
 test-suite tests
