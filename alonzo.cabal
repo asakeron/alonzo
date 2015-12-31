@@ -11,9 +11,9 @@ extra-source-files:  README.md, LICENSE
 cabal-version:       >=1.10
 
 library
-  exposed-modules:     Alonzo.Syntax
-                     , Alonzo.Parser
-                     , Alonzo.Interpreter
+  exposed-modules:     Language.Alonzo.Syntax
+                     , Language.Alonzo.Parser
+                     , Language.Alonzo.Interpreter
   ghc-options:         -W -Wall -Werror
   build-depends:       base
                      , attoparsec

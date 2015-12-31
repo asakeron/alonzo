@@ -2,8 +2,8 @@ module Main where
 
 import System.Console.Haskeline
 import qualified Data.Text          as T
-import qualified Alonzo.Parser      as P
-import qualified Alonzo.Interpreter as I
+import qualified Language.Alonzo.Parser      as P
+import qualified Language.Alonzo.Interpreter as I
 
 main :: IO ()
 main = runInputT defaultSettings repl

@@ -1,4 +1,4 @@
-module Alonzo.Syntax where
+module Language.Alonzo.Syntax where
 
 data Expression = Name String
                 | Abstraction String Expression

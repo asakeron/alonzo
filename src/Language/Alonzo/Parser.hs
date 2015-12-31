@@ -1,9 +1,9 @@
-module Alonzo.Parser (
-  Alonzo.Parser.parse) where
+module Language.Alonzo.Parser (
+  Language.Alonzo.Parser.parse) where
 
 import           Data.Attoparsec.Text
-import qualified Data.Text     as T
-import qualified Alonzo.Syntax as Syntax
+import qualified Data.Text              as T
+import qualified Language.Alonzo.Syntax as Syntax
 
 parse :: T.Text -> Either String Syntax.Expression
 parse = parseOnly expression

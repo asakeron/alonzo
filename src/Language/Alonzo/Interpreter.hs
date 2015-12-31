@@ -1,8 +1,8 @@
-module Alonzo.Interpreter (
+module Language.Alonzo.Interpreter (
   eval) where
 
-import qualified Alonzo.Syntax as S
-import qualified Data.Map      as M
+import qualified Language.Alonzo.Syntax as S
+import qualified Data.Map               as M
 
 eval :: S.Expression -> Either String S.Expression
 eval e = evalWithEnv e M.empty
@@ -17,4 +17,4 @@ evalWithEnv (S.Application f arg) env = do
    _                         -> Left $ "Error: trying to apply " ++ show f ++
                                        ", which is not an abstraction, to argument "
                                        ++ show arg ++ "."
-                                       
+
