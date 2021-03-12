@@ -1,14 +1,13 @@
+cabal-version:       2.4
 name:                alonzo
-version:             0.1.0.0
+version:             0.2.0.0
 synopsis:            Toy lambda calculus interpreter
-license:             GPL-3
-license-file:        LICENSE
-author:              asakeron
-maintainer:          asakeron@gmail.com
+license:             AGPL-3.0-or-later
+license-file:        COPYING
+author:              André
+maintainer:          abs+haskell@emancipe.se
 category:            Development
-build-type:          Simple
-extra-source-files:  README.md, LICENSE
-cabal-version:       >=1.10
+extra-source-files:  README.md, COPYING
 
 library
   exposed-modules:     Language.Alonzo.Syntax

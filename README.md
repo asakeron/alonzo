@@ -1,3 +1,8 @@
 # Alonzo
 
-Alonzo is a toy λ-calculus interpreter written in Haskell, primarily for learning purposes.
+Alonzo is a toy λ-calculus interpreter written in Haskell.
+
+# REPL
+
+To play with the REPL, clone the repository and run it with `cabal run alonzo-repl`.
+
