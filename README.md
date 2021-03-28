@@ -1,4 +1,4 @@
-# Alonzo
+# Alonzo [![Test](https://github.com/asakeron/alonzo/actions/workflows/test.yaml/badge.svg)](https://github.com/asakeron/alonzo/actions/workflows/test.yaml)
 
 Alonzo is a toy λ-calculus interpreter written in Haskell.
 
