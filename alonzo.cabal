@@ -1,45 +1,32 @@
-cabal-version:       2.4
-name:                alonzo
-version:             0.2.0.0
-synopsis:            Toy lambda calculus interpreter
-license:             AGPL-3.0-or-later
-license-file:        COPYING
-author:              André
-maintainer:          abs+haskell@emancipe.se
-category:            Development
-extra-source-files:  README.md, COPYING
+cabal-version:      3.0
+name:               alonzo
+version:            0.0.0.0
+synopsis:           Lambda calculus fun
+homepage:           https://github.com/asakeron/alonzo
+bug-reports:        https://github.com/asakeron/alonzo
+license:            AGPL-3.0-or-later
+license-file:       COPYING
+author:             André
+maintainer:         abs@emancipe.se
+category:           Development
+extra-source-files:
+    README.md
+    COPYING
 
 library
-  exposed-modules:     Language.Alonzo.Syntax
-                     , Language.Alonzo.Parser
-                     , Language.Alonzo.Interpreter
-  ghc-options:         -W -Wall -Werror
-  build-depends:       base
-                     , attoparsec
-                     , text
-                     , containers
-  hs-source-dirs:      src
-  default-language:    Haskell2010
+    exposed-modules:  Lambda
+                    , Lambda.AST
+                    , Lambda.Eval
+                    , Lambda.Read
+    build-depends:    base         ^>=4.14.1.0
+                    , parsec       ^>=3.1.14.0
+    hs-source-dirs:   src
+    default-language: Haskell2010
 
-executable alonzo-repl
-  main-is:             Main.hs
-  ghc-options:         -W -Wall -Werror -threaded -rtsopts -with-rtsopts=-N -O2
-  build-depends:       base
-                     , haskeline
-                     , text
-                     , alonzo
-  hs-source-dirs:      repl
-  default-language:    Haskell2010
-
-test-suite tests
-  type:                exitcode-stdio-1.0
-  hs-source-dirs:      tests
-  main-is:             Main.hs
-  ghc-options:         -W -Wall -Werror
-  build-depends:       base
-                     , HUnit
-                     , QuickCheck
-                     , test-framework
-                     , test-framework-hunit
-                     , test-framework-quickcheck2
- default-language:     Haskell2010
+test-suite alonzo-test
+    default-language: Haskell2010
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Main.hs
+    build-depends:    base ^>=4.14.1.0
+                    , alonzo
