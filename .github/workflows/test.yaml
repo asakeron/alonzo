@@ -11,13 +11,9 @@ jobs:
     strategy:
       matrix:
         ghc:
-          - 9.0
           - 8.10
-          - 8.8
         cabal:
           - 3.4
-          - 3.2
-          - 3.0
     steps:
       - uses: actions/checkout@v2
       - name: setup GHC
