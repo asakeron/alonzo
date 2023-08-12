@@ -2,6 +2,7 @@ module Lambda.Read where
 
 import Text.Megaparsec
 import Text.Megaparsec.Char
+import Text.Megaparsec.Char.Lexer
 import Lambda.AST
 
 read :: String -> Expression
@@ -29,6 +30,11 @@ parseEvaluation_ = do
   _ <- char ' '
   Evaluation e1 <$> parse_
 
+parseInteger_ :: Parser Expression
+parseInteger_ = Integer <$> decimal
+
+parseDecimal_ :: Parser Expression
+parseDecimal_ = Decimal <$> float
 
 instance Read Expression where
   readsPrec _ str = [(Lambda.Read.read str, "")]

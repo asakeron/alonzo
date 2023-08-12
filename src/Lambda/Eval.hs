@@ -16,4 +16,6 @@ eval e (Evaluation
         (Abstraction
          p@(Symbol _) b)
         x)               = eval ([(p, x)] <> e) b
+eval _ (Integer i) = Integer i
+eval _ (Decimal d) = Decimal d
 eval _ _ = Symbol '\0'
